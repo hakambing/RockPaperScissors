@@ -1,3 +1,23 @@
+function name_id(ele) {
+  const nameForm = document.getElementById("nameForm");
+  const welcomeMsg = document.getElementById("welcomeMsg");
+  const container = document.getElementById("container");
+
+  if (event.key === 'Enter') {
+    nameForm.style.display = "none";
+ 
+    welcomeMsg.style.display = "flex";
+    document.getElementById("welcome").innerText = "Welcome, " + ele.value;
+    
+  }
+  setTimeout(function() {
+    window.location.href = "game.html";
+  }, 8500);
+  
+  document.getElementById("score1").innerText = ele.value;
+}
+
+
 function computerPlay() {
   const choiceArray = ["Rock", "Paper", "Scissors"];
   const random = Math.floor(Math.random() * choiceArray.length);

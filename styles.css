@@ -1,0 +1,100 @@
+* {
+    background: #f4f3f2;
+    font-family: 'Coming Soon', cursive;
+}
+
+.nameForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    flex-direction: column;
+    font-family: 'Coming Soon', cursive;
+    font-size: clamp(20px, 3vw, 48px);
+
+}
+
+#name_id {
+    border-style: solid;
+    border-color: black;
+    font-size: clamp(20px, 3vw, 48px);
+    font-family: 'Coming Soon', cursive;
+}
+
+.welcomeMsg {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    flex-direction: column;
+    font-family: 'Coming Soon', cursive;
+    font-size: clamp(20px, 3vw, 48px);
+    -webkit-animation: fadeinout 8s linear forwards;
+    animation: fadeinout 8s linear forwards;
+}
+
+
+@-webkit-keyframes fadeinout {
+    0%,100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+  
+  @keyframes fadeinout {
+    0%,100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+
+.container {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    display: grid;
+    grid-template-areas: "score1 . score2"
+        ". message ."
+        "rock paper scissors";
+    
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 50px auto 70px;
+    gap: 200px 50px;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+.score1 {
+    grid-area: score1;
+    text-align: left;
+    font-size: clamp(12px, 3vw, 25px);
+}
+
+.topBar {
+    grid-area: message;
+    text-align: center;
+
+    font-size: clamp(20px, 3vw, 48px);
+}
+
+.score2 {
+    grid-area: score2;
+    text-align: right;
+    font-size: clamp(12px, 3vw, 25px);
+}
+
+#Rock {
+    grid-area: rock;
+}
+
+#Paper {
+    grid-area: paper;
+}
+
+#Scissors {
+    grid-area: scissors;
+}
+
