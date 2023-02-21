@@ -73,11 +73,14 @@ buttons.forEach((button) =>
     if (results.includes("Winner")) {
       playerScore++;
       document.getElementById("score1").innerText = window.name + '\n' + playerScore;
+      document.getElementById("whoWon").innerText = window.name + " won this round.";
     } else if (results.includes("Loser")) {
       computerScore++;
       document.getElementById("score2").innerText = 'Computer' + '\n' + computerScore;
+      document.getElementById("whoWon").innerText = window.name + " lost this round.";
     } else if (results.includes("Draw")) {
       //i--;
+      document.getElementById("whoWon").innerText = "It's a draw.";
     }
     console.log("You chose: " + playerSelection);
     console.log("Computer chose: " + computerSelection);
@@ -102,9 +105,7 @@ buttons.forEach((button) =>
 );
 
 
-function gamePage() {
 
-}
 
 function playAgain() {
   window.location.href = "game.html";

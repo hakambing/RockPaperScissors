@@ -65,11 +65,12 @@
     display: grid;
     grid-template-areas: "score1 . score2"
         ". message ."
-        ". paper .";
+        ". paper ."
+        ". whoWon .";
 
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 50px auto 70px;
-    gap: 200px 50px;
+    gap: 150px 50px;
 }
 
 @keyframes fadeInAnimation {
@@ -99,6 +100,12 @@
 
 .score2 {
     grid-area: score2;
+    text-align: center;
+    font-size: clamp(12px, 3vw, 25px);
+}
+
+.whoWon{
+    grid-area: whoWon;
     text-align: center;
     font-size: clamp(12px, 3vw, 25px);
 }
@@ -143,3 +150,5 @@
     border: 2px solid black;
     cursor: pointer;
 }
+
+
