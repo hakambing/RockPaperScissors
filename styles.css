@@ -1,0 +1,154 @@
+* {
+    background: #f4f3f2;
+    font-family: 'Coming Soon', cursive;
+}
+
+.nameForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    flex-direction: column;
+    font-family: 'Coming Soon', cursive;
+    font-size: clamp(20px, 3vw, 48px);
+
+}
+
+#name_id {
+    border-style: solid;
+    border-color: black;
+    font-size: clamp(20px, 3vw, 48px);
+    font-family: 'Coming Soon', cursive;
+}
+
+.welcomeMsg {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    flex-direction: column;
+    font-family: 'Coming Soon', cursive;
+    font-size: clamp(20px, 3vw, 48px);
+    -webkit-animation: fadeinout 8s linear forwards;
+    animation: fadeinout 8s linear forwards;
+}
+
+
+@-webkit-keyframes fadeinout {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeinout {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.container {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    display: grid;
+    grid-template-areas: "score1 . score2"
+        ". message ."
+        ". paper ."
+        ". whoWon .";
+
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 50px auto 70px;
+    gap: 150px 50px;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.score1 {
+    grid-area: score1;
+
+    text-align: center;
+
+    font-size: clamp(12px, 3vw, 25px);
+}
+
+.topBar {
+    grid-area: message;
+    text-align: center;
+
+    font-size: clamp(20px, 3vw, 48px);
+}
+
+.score2 {
+    grid-area: score2;
+    text-align: center;
+    font-size: clamp(12px, 3vw, 25px);
+}
+
+.whoWon{
+    grid-area: whoWon;
+    text-align: center;
+    font-size: clamp(12px, 3vw, 25px);
+}
+
+.buttons {
+    grid-area: paper;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+
+}
+
+.choiceBtn {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+
+}
+
+.restartPage {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+}
+
+.resultMsg{
+    font-size: clamp(20px, 3vw, 48px);
+}
+
+.submitBtn, .choiceBtn, .restartBtn{
+    font-size: clamp(12px, 3vw, 25px);
+    border-radius: 10px;
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+

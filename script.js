@@ -1,3 +1,30 @@
+
+function name_id() {
+  const nameForm = document.getElementById("nameForm");
+  const welcomeMsg = document.getElementById("welcomeMsg");
+  const container = document.getElementById("container");
+
+  var input = document.getElementById("name_id").value;
+
+  //storing the name so i can use it in different pages
+  window.name = input;
+
+  //styles to do the transition
+  nameForm.style.display = "none";
+
+  welcomeMsg.style.display = "flex";
+  document.getElementById("welcome").innerText = "Welcome, " + input;
+
+  setTimeout(function () {
+    window.location.href = "game.html";
+  }, 8500);
+  //end os styles
+
+}
+
+//displaying the name in game.html
+document.getElementById("score1").innerText = window.name + "\n0";
+
 function computerPlay() {
   const choiceArray = ["Rock", "Paper", "Scissors"];
   const random = Math.floor(Math.random() * choiceArray.length);
@@ -34,19 +61,26 @@ const buttons = document.querySelectorAll(".choiceBtn");
 
 let playerScore = 0;
 let computerScore = 0;
+const container = document.getElementById("container");
+const restartPage = document.getElementById("restartPage");
 
 buttons.forEach((button) =>
   button.addEventListener("click", () => {
     //for (let i = 0; i < 5; i++) {
-    const playerSelection = button.textContent;
+    const playerSelection = button.id;
     const computerSelection = computerPlay();
     let results = playRound(playerSelection, computerSelection);
     if (results.includes("Winner")) {
       playerScore++;
+      document.getElementById("score1").innerText = window.name + '\n' + playerScore;
+      document.getElementById("whoWon").innerText = window.name + " won this round.";
     } else if (results.includes("Loser")) {
       computerScore++;
+      document.getElementById("score2").innerText = 'Computer' + '\n' + computerScore;
+      document.getElementById("whoWon").innerText = window.name + " lost this round.";
     } else if (results.includes("Draw")) {
       //i--;
+      document.getElementById("whoWon").innerText = "It's a draw.";
     }
     console.log("You chose: " + playerSelection);
     console.log("Computer chose: " + computerSelection);
@@ -57,12 +91,29 @@ buttons.forEach((button) =>
     if (playerScore == 5 || computerScore == 5) {
       if (playerScore > computerScore) {
         console.log("YOU WIN");
+        document.getElementById("resultMsg").innerText = window.name + " won.";
+        container.style.display = "none";
+        restartPage.style.display = "flex";
       } else if (computerScore > playerScore) {
         console.log("YOU LOSE");
+        document.getElementById("resultMsg").innerText = "Computer won.";
+        container.style.display = "none";
+        restartPage.style.display = "flex";
       }
     }
   })
 );
+
+
+
+
+function playAgain() {
+  window.location.href = "game.html";
+}
+
+function quitGame() {
+  window.location.href = "index.html";
+}
 
 // const rockButton = document.querySelector('.rock');
 // const paperButton = document.querySelector('.paper');
