@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="styles.css">
     <title>Rock, Paper, Scissors</title>
 
@@ -18,14 +18,26 @@
     <div id="container" class="container">
         <h2 class="grid-item score1" id="score1"></h2>
         <h1 class="grid-item topBar">Pick a weapon</h1>
-        <h2 class="grid-item score2">Computer</h2>
-        <div class="grid-item buttons"></div>
-        <button id="Rock" class="grid-item choiceBtn"><iconify-icon class="rockIcon" icon="noto:rock" width="128" height="128"></iconify-icon></button>
-        <button id="Paper" class="grid-item choiceBtn"><iconify-icon class="paperIcon" icon="fluent-emoji:roll-of-paper" width="128" height="128"></iconify-icon></button>
-        <button id="Scissors" class="grid-item choiceBtn"><iconify-icon class="scissorsIcon" icon="emojione-v1:scissors" width="128" height="128"></iconify-icon></button>
-        
+        <h2 class="grid-item score2" id="score2">Computer <br> 0</h2>
+        <div class="grid-item buttons">
+            <button id="Rock" class="grid-item choiceBtn"><iconify-icon class="rockIcon" icon="noto:rock" width="128"
+                    height="128"></iconify-icon></button>
+            <button id="Paper" class="grid-item choiceBtn"><iconify-icon class="paperIcon"
+                    icon="fluent-emoji:roll-of-paper" width="128" height="128"></iconify-icon></button>
+            <button id="Scissors" class="grid-item choiceBtn"><iconify-icon class="scissorsIcon"
+                    icon="emojione-v1:scissors" width="128" height="128"></iconify-icon></button>
+        </div>
+
     </div>
+
+    <div class="restartPage" id="restartPage">
+        <h1 class="restartChild resultMsg" id="resultMsg">Zayn won.</h1>
+        <div class="restartChild restartButtons">
+            <button class="restartBtn" id="playAgain" onclick="playAgain()">Play Again?</button>
+            <button class="restartBtn" id="quit" onclick="quitGame()">Quit</button>
+        </div>
     </div>
+
     <script src="script.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
 </body>
